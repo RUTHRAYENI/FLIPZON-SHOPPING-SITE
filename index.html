@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLIPZON ONLINE SHOPPING SITE</title>
+  <link rel="icon" type="image/png" href="images/logo.jpg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="dashboard-bubbles">
+    <div class="bubble" id="cart-count" onclick="toggleCartSidebar()">🛒 0</div>
+    <div class="bubble" id="wishlist-count" onclick="toggleWishlistSidebar()">❤️ 0</div>
+  </div>
+
+  <header>
+    <div class="header-logo">
+      <img src="images/FLIPZON.jpg" alt="Shop Logo">
+      <h1>FLIPZON ONLINE SHOPPING SITE</h1>
+
+    </div>
+    <div class="controls">
+      <input type="text" id="search" placeholder="Search products...">
+      <select id="sort" onchange="sortProducts()">
+        <option value="">Sort by</option>
+        <option value="priceLow">Price: Low → High</option>
+        <option value="priceHigh">Price: High → Low</option>
+        <option value="name">Name</option>
+      </select>
+      <select id="categoryFilter" onchange="filterByCategory()">
+        <option value="">All Categories</option>
+        <option value="groceries">Groceries</option>
+        <option value="electricals">Electricals</option>
+        <option value="household">Household</option>
+      </select>
+      <button id="darkModeBtn">🌙</button>
+    </div>
+  </header>
+
+  
+  <section class="carousel-container" id="product-carousel"></section>
+
+  
+  <div class="modal" id="product-modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <div id="modal-body"></div>
+      <div id="reviews"></div>
+    </div>
+  </div>
+
+ 
+  <div id="cart-sidebar">
+    <button class="close-sidebar" onclick="toggleCartSidebar()">×</button>
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <p>Total: ₹<span id="sidebar-total">0</span></p>
+  </div>
+
+ 
+  <div id="wishlist-sidebar">
+    <button class="close-sidebar" onclick="toggleWishlistSidebar()">×</button>
+    <h2>Your Wishlist</h2>
+    <div id="wishlist-items"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
